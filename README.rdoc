@@ -6,7 +6,7 @@ https://github.com/chip-rosenthal/tecfiler
 == Installation Notes
 
     git clone https://github.com/hdaniel/tecfiler-rails.git
-
+    cd tecfiler-rails
     bundle install
 
 - Copy config/database_example.yml to database.yml and edit it for your preferred db.

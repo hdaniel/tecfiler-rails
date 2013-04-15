@@ -33,3 +33,5 @@ pickle-email-*.html
 .project
 /config/database.yml
 /config/email.yml
+*.un~
+*.swp

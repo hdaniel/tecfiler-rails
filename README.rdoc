@@ -9,7 +9,7 @@ https://github.com/chip-rosenthal/tecfiler
 
 - Migrate the database:
 
-  bundle exec rake db:migrate
+    bundle exec rake db:migrate
 
   Note: This project is using datamapper, so the migration
   may not be required but it doesn't hurt.

@@ -1,0 +1,33 @@
+<h1>Austin Campaign Report Filing</h1>
+
+<p>
+	Welcome to the City of Austin online campaign finance report filing.
+</p>
+
+<% if user_signed_in? %>
+  <%= render :partial => 'shared/filers' %>
+  <%= link_to 'Manage Filers', user_filers_path(@user) %>
+
+  <% content_for(:sidebar) do %>
+    <h2>Instructions</h2>
+    Please use the form on the left to manage your filers
+    and reports.
+  <% end %>
+
+<% else %>
+  <p>
+    To get started, please <%= link_to 'Login', new_user_session_path %> or 
+    <%= link_to 'Sign up for a new account', new_user_registration_path %>.
+  </p>
+<% end %>
+
+<% unless user_signed_in? %>
+  <% content_for(:sidebar) do %>
+    <h2>About this Site</h2>
+    This website provides a public searchable and downloadable database of 
+    all electronic campaign finance reports, lobbying reports, 
+    and independent expenditures for political campaigns in the 
+    city of Austin.
+  <% end %>
+<% end %>
+

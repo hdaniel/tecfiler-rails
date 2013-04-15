@@ -1,0 +1,29 @@
+== Welcome 
+
+example link
+link:files/vendor/rails/actionpack/README.html.
+
+== Installation Notes
+
+- Copy config/database_example.yml to database.yml and edit it
+	for your preferred db.
+
+- Migrate the database:
+
+  bundle exec rake db:migrate
+
+- Copy config/email_example.yml to email.yml and edit it for
+	your email server settings. 
+  
+- Change directory to <tt>tecfiler-rails</tt> and start the web server:
+       <tt>cd tecfiler-rails; rails server</tt> (run with --help for options)
+
+- Go to http://localhost:3000/
+
+- Follow the guidelines to start developing your application. You can find
+the following resources handy:
+
+* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
+* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
+
+

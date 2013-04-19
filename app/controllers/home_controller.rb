@@ -4,7 +4,8 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     if user_signed_in?
-      @filers = @user.filers
+      @filer = @user.filer
+      @treasurer = @filer.treasurer unless @filer.blank?
     end
   end
   

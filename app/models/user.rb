@@ -2,7 +2,7 @@ class User
 
   include DataMapper::Resource
   
-  has n, :filers
+  has 1, :filer
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

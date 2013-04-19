@@ -56,7 +56,7 @@ class TreasurersController < ApplicationController
 
     respond_to do |format|
       if @treasurer.save
-        format.html { redirect_to user_filer_path(@user, @filer), notice: 'Treasurer was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Treasurer was successfully created.' }
         format.json { render json: @treasurer, status: :created, location: @treasurer }
       else
         format.html { render action: "new" }
@@ -74,7 +74,7 @@ class TreasurersController < ApplicationController
 
     respond_to do |format|
       if @treasurer.update(params[:treasurer])
-        format.html { redirect_to user_filer_path(@user, @filer), notice: 'Treasurer was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Treasurer was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

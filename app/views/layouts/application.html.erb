@@ -22,7 +22,6 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<% if user_signed_in? %>
-              <li><%= link_to "My Filers", user_filers_path(@user) %></li>
               <li><%= link_to "Edit account (#{current_user.username})" , edit_user_registration_path %></li>
 							<li><%= link_to 'Sign Out', destroy_user_session_path, 
 								:method => :delete %></li>
@@ -58,12 +57,16 @@
 					<div class="alert alert-info">
 						<%= alert_info %>
 					</div>
-				<% end %>
-				<%= yield %>
-			</div>
+        <% end %>
+
+        <%= yield %>
+
+      </div>
+
       <div class="span3">
         <%= yield :sidebar %>
-		  </div>
+      </div>
+
 	</div>
 </body>
 </html>

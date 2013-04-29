@@ -5,7 +5,10 @@ class HomeController < ApplicationController
     @user = current_user
     if user_signed_in?
       @filer = @user.filer
-      @treasurer = @filer.treasurer unless @filer.blank?
+      unless @filer.blank?
+        @treasurer = @filer.treasurer 
+        @reports = @filer.reports
+      end
     end
   end
   

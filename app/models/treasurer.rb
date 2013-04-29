@@ -24,12 +24,20 @@ class Treasurer
   property :address_changed, Boolean, :default => false
 
   property :phone, String, :required => true
+  validates_format_of :phone, :with => /(^$)|(^(\d\d\d-)?\d\d\d-\d\d\d\d(x\d+)?$)/,
+    :message => 'Please enter a valid phone number (e.g. "512-555-1234x200")',
+    :if => Proc.new { |f| !f.phone.blank? }  
 
 	property :created_at, DateTime
 	property :updated_at, DateTime
 
-  validates_format_of :phone, :with => /(^$)|(^(\d\d\d-)?\d\d\d-\d\d\d\d(x\d+)?$)/,
-    :message => 'Please enter a valid phone number (e.g. "512-555-1234x200")',
-    :if => Proc.new { |f| !f.phone.blank? }  
+  def address
+    addr = []
+    a = self.address_street
+    a << " ste " + self.address_suite unless self.address_suite.nil?
+    addr << a
+    addr << self.address_city + ", " + self.address_state + " " + self.address_zip
+    return addr        
+  end
 
 end

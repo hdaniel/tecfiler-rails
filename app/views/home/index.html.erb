@@ -5,74 +5,12 @@
 </p>
 
 <% if user_signed_in? %>
-  <div class="span4">
-    <legend>Filer Details</legend>
-    <% if @filer.present? %>
-      <p>
-        <%= @filer.name_prefix %>
-        <%= @filer.name_first %>
-        <%= @filer.name_mi %>
-        <%= @filer.name_last %>
-        <%= @filer.name_suffix %>
-        (<%= @filer.name_nick %>)
-      </p>
 
-      <p>
-        <%= @filer.address_street %>
-        <%= @filer.address_suite %><br />
-        <%= @filer.address_city %>
-        <%= @filer.address_state %>
-        <%= @filer.address_zip %><br />
-        <%= @filer.phone %>
-      </p>
+  <%= render 'filer' %>
 
-      <div class="form-actions">
-        <%= link_to 'Edit Filer', edit_user_filer_path(@user, @filer), :class => 'btn' %>
-      </div>
-    <% else %>
-      <p>You haven't added your filer information, yet. Please add your filer information to continue.</p>
-      <div class="form-actions">
-        <%= link_to 'Add Filer', new_user_filer_path(@user), :class => 'btn' %>
-      </div>
-    <% end %>
+  <%= render 'treasurer' %>
 
-  </div>
-
-  <div class="span4">
-    <% unless @filer.blank? %>
-      <legend>Treasurer Details</legend>
-      <% if @treasurer.present? %>
-        <p>
-          <%= @treasurer.name_prefix %>
-          <%= @treasurer.name_first %>
-          <%= @treasurer.name_mi %>
-          <%= @treasurer.name_last %>
-          <%= @treasurer.name_suffix %>
-          (<%= @treasurer.name_nick %>)
-        </p>
-
-        <p>
-          <%= @treasurer.address_street %>
-          <%= @treasurer.address_suite %><br />
-          <%= @treasurer.address_city %>
-          <%= @treasurer.address_state %>
-          <%= @treasurer.address_zip %><br />
-          <%= @treasurer.phone %>
-        </p>
-
-        <div class="form-actions">
-          <%= link_to 'Edit Treasurer', 
-            edit_user_filer_treasurer_path(@user, @filer, @filer.treasurer), :class => 'btn' %>
-        </div>
-      <% else %>
-        <p>You haven't added your treasurer information, yet. Please add your treasurer to continue.</p>
-        <div class="form-actions">
-          <%= link_to 'Add Treasurer', new_user_filer_treasurer_path(@user, @filer), 
-            :class => 'btn' %>
-        </div>
-      <% end %>
-    <% end %> 
-  </div>
+  <%= render 'reports' %>
 
   <% content_for(:sidebar) do %>
     <h2>Instructions</h2>

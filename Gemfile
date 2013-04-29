@@ -67,7 +67,7 @@ gem 'dm-serializer',     '~> 1.2.0'
 gem 'dm-devise',         '~> 2.1.0'
 
 # paperclip for file uploads:
-gem "dm-paperclip", "~> 2.4.1"
+gem "dm-paperclip", :git => 'git://github.com/krobertson/dm-paperclip.git'
 
 # twitter bootstrap:
 gem "therubyracer"

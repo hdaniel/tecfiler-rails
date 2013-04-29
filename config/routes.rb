@@ -1,5 +1,11 @@
 TecfilerRails::Application.routes.draw do
 
+  resources :expenditures
+
+
+  resources :contributions
+
+
   root :to => 'home#index'
 
   devise_for :users
@@ -7,6 +13,7 @@ TecfilerRails::Application.routes.draw do
   resources :users do  
     resources :filers do
       resources :treasurers
+      resources :reports
     end
     # resources :user_files
   end

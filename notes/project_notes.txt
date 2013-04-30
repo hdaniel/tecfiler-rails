@@ -43,4 +43,4 @@ http://stackoverflow.com/questions/10115958/undefined-method-opts-from-validator
 either patch manually or validate manually.
 
 
-Testing redmine-hook - 2.
+Testing redmine-hook - 3.
